@@ -1,0 +1,13 @@
+import linux commands
+
+ls - list
+cd - change directory
+mv filename.blah /new_folder/ - move a file to a place
+cp filename.blah /new_folder/ - copy a file to a place
+mkdir directoryname - make a new directory
+
+--------
+
+git commands
+
+
