@@ -10,4 +10,12 @@ mkdir directoryname - make a new directory
 
 git commands
 
+git clone ________ - copies stuff down from the internet/github
 
+git status - checks current directory for changes
+
+git add .
+
+git commit -am'some comment'
+
+git push origin master
