@@ -3,9 +3,15 @@
 // var showing = true;
 // var waitress;
 // var img;
+// var song;
+
+// function preload(){
+// 	song = loadSound('k.mp3');
+// }
  
 function setup() {
   createCanvas(windowWidth,windowHeight);
+  // song.loop(); 
   // img = loadImage("shark.jpg"); 
 //   viewfs = document.getElementById("enter");
 //   exitfs = document.getElementById("exit");
@@ -19,6 +25,15 @@ function setup() {
 //   createCanvas(800, 600);
 //   frameRate(60);
 // }
+
+// function mousePressed() {
+//   if ( song.isPlaying() ) { // .isPlaying() returns a boolean
+//     song.pause(); // .play() will resume from .pause() position
+//     background(255,0,0);
+//   } else {
+//     song.play();
+//     background(0,255,0);
+//   }
 
   function draw() {
   //background(255);
@@ -53,42 +68,87 @@ function setup() {
 
   //.. image(img, 0, height/2, img.width/2, img.height/2);
 
-push();
+//mouse circles
 
+push();
  background(64,164,193);
     stroke(0);
     strokeWeight(20);
     fill(255,0,150,0);
   noCursor();
-  ellipse(mouseX, mouseY, 80, 80);
 pop();  
+
+
+push();
+    stroke(0);
+    strokeWeight(20);
+  ellipse(mouseX, mouseY, 80, 80);
+pop();
 
 push();	
 	stroke(255);
+	strokeWeight(0);
 	fill(255);
 	ellipse (mouseX, mouseY, 20, 20);
 pop();	
 
+// push();
+// translate(mouseX, mouseY);
+// stroke(255, 150);
+//   strokeWeight(0);
+//   fill(255, 150);
+
+// beginShape();
+// for(var i = 0; i < 100; i++) {
+//   var radius = 10 + random(2);
+//   var x = cos(radians(i * 3.6)) * radius;
+//   var y = sin(radians(i * 3.6)) * radius;
+//   vertex(x, y);
+// }
+// endShape(CLOSE);
+// pop();
+
+
+// push();
+// translate(mouseX, mouseY);
+// stroke(0);
+//   strokeWeight(20);
+//   fill(255,0,150,0);
+
+// beginShape();
+// for(var i = 0; i < 100; i++) {
+
+
+//   var radius = 50 + random(5);
+//   var x = cos(radians(i * 3.6)) * radius;
+//   var y = sin(radians(i * 3.6)) * radius;
+//   vertex(x, y);
+// }
+// endShape(CLOSE);
+// pop();
+
+//weird shaky circle mouse
 push();
-  beginShape();
-  stroke(0);
+translate(mouseX, mouseY);
+stroke(0);
   strokeWeight(5);
-  fill(255,0,150);
-  vertex(2, 600);
-  vertex(1, 80);
-  vertex(windowWidth*.65, 600);
-endShape(CLOSE)
+  fill(255,0,150,0);
+
+beginShape();
+for(var i = 0; i < 100; i++) {
+
+
+  var radius = 75 + random(5);
+  var x = cos(radians(i * 3.6)) * radius;
+  var y = sin(radians(i * 3.6)) * radius;
+  vertex(x, y);
+}
+endShape(CLOSE);
 pop();
 
-//squares
-push();
-	stroke(255);
-	strokeWeight(0);
-	fill(255,0,150);
-for(var i = 0; i < 1500; i++) {
-  rect(i * mouseX, 10, 50, 50);
-}
-pop();
+
+//top squares
+
 
   var x = mouseX;
   var y = mouseY;
@@ -98,20 +158,94 @@ pop();
 push();
 	stroke(255);
 	strokeWeight(0);
+	fill(255,0,150);
+for(var i = 0; i < 1500; i++) {
+  rect(i * mouseX, 0, 50, 50);
+}
+pop();
+
+push();
+	stroke(255);
+	strokeWeight(0);
+	fill(255);
+for(var i = 0; i < 1500; i++) {
+  rect(i * ix, 0, 50, 50);
+}
+pop();
+
+push();
+	stroke(255);
+	strokeWeight(0);
 	fill(255);
 for(var i = 0; i < 1500; i++) {
   rect(i * ix, windowHeight-55, 50, 50);
 }
 pop();
-
-
-pop();
-	strokeWeight(0);
-  fill(255, 150);
-  ellipse(x, height/2, y, y);
-  fill(0, 159);
-  ellipse(ix, height/2, iy, iy);
+////////Extra Squares
 push();
+	stroke(255);
+	strokeWeight(0);
+	fill(255);
+for(var i = 0; i < 1500; i++) {
+  rect(i * x, windowHeight, 50, 50);
+}
+pop();
+
+push();
+	stroke(255);
+	strokeWeight(0);
+	fill(255,0,150);
+for(var i = 0; i < 1500; i++) {
+  rect(i * x, windowHeight-55, 50, 50);
+}
+pop();
+
+//background circles sun
+push(); 
+
+  var x = mouseX;
+  var y = mouseY;
+  var ix = width - mouseX;  // Inverse X
+  var iy = height - mouseY; // Inverse Y
+
+
+translate(windowWidth*.80, windowHeight*.25);
+beginShape();
+for(var i = 0; i < 100; i++) {
+  var radius = 75 + random(5);
+  var x = cos(radians(i * 3.6)) * radius;
+  var y = sin(radians(i * 3.6)) * radius;
+
+	strokeWeight(2);
+	stroke(0);
+  fill(255, 150);
+  vertex(x, y);
+  // ellipse(x, height/2, y, y);
+  // fill(0, 159);
+  vertex(x*2, y*2);
+  // ellipse(ix, height/2, iy, iy);
+}
+endShape(CLOSE);
+pop();
+
+
+// push();
+// translate(mouseX, mouseY);
+// stroke(0);
+//   strokeWeight(5);
+//   fill(255,0,150,0);
+
+// beginShape();
+// for(var i = 0; i < 100; i++) {
+
+
+//   var radius = 75 + random(5);
+//   var x = cos(radians(i * 3.6)) * radius;
+//   var y = sin(radians(i * 3.6)) * radius;
+//   vertex(x, y);
+// }
+// endShape(CLOSE);
+// pop();
 
 
 
@@ -119,9 +253,18 @@ push();
 
 push();
 
+strokeWeight(5+ random(1));
+
   beginShape();
   stroke(0);
-  strokeWeight(5);
+  fill(255,0,150);
+  vertex(2, 600);
+  vertex(1, 80);
+  vertex(windowWidth*.65, 600);
+endShape(CLOSE)
+
+  beginShape();
+  stroke(0);
   fill(255);
   vertex(0, 600);
   vertex(0, 80);
@@ -130,7 +273,6 @@ endShape(CLOSE)
 
   beginShape();
   stroke(0);
-  strokeWeight(5);
   fill(255,0,150);
   vertex(0, 600);
   vertex(0, 80);
@@ -139,7 +281,6 @@ endShape(CLOSE)
 
   beginShape();
   stroke(0);
-  strokeWeight(5);
   fill(255);
   vertex(0, 600);
   vertex(0, 80);
@@ -148,7 +289,6 @@ endShape(CLOSE)
 
   beginShape();
   stroke(0);
-  strokeWeight(5);
   fill(255,0,150);
   vertex(0, 600);
   vertex(0, 80);
@@ -157,7 +297,6 @@ endShape(CLOSE)
 
   beginShape();
   stroke(0);
-  strokeWeight(5);
   fill(255);
   vertex(0, 600);
   vertex(0, 80);
@@ -166,7 +305,6 @@ endShape(CLOSE)
 
   beginShape();
   stroke(0);
-  strokeWeight(5);
   fill(255,0,150);
   vertex(0, 600);
   vertex(0, 80);
@@ -175,7 +313,6 @@ endShape(CLOSE)
 
   beginShape();
   stroke(0);
-  strokeWeight(5);
   fill(255);
   vertex(0, 600);
   vertex(0, 80);
@@ -184,7 +321,6 @@ endShape(CLOSE)
 
   beginShape();
   stroke(0);
-  strokeWeight(5);
   fill(255,0,150);
   vertex(0, 600);
   vertex(0, 80);
@@ -193,7 +329,6 @@ endShape(CLOSE)
 
   beginShape();
   stroke(0);
-  strokeWeight(5);
   fill(255);
   vertex(0, 600);
   vertex(0, 80);
@@ -202,7 +337,6 @@ endShape(CLOSE)
 
   beginShape();
   stroke(0);
-  strokeWeight(5);
   fill(255,0,150);
   vertex(0, 600);
   vertex(0, 80);
@@ -211,7 +345,6 @@ endShape(CLOSE)
 
   beginShape();
   stroke(0);
-  strokeWeight(5);
   fill(255);
   vertex(0, 600);
   vertex(0, 80);
@@ -220,7 +353,6 @@ endShape(CLOSE)
 
   beginShape();
   stroke(0);
-  strokeWeight(5);
   fill(255,0,150);
   vertex(0, 600);
   vertex(0, 80);
@@ -229,9 +361,11 @@ endShape(CLOSE)
 
 //////opposite triangles
 
+strokeWeight(5+ random(1));
+
+
   beginShape();
   stroke(0);
-  strokeWeight(5);
   fill(255);
   vertex(windowWidth, 600);
   vertex(windowWidth, 80);
@@ -240,7 +374,6 @@ endShape(CLOSE)
 
   beginShape();
   stroke(0);
-  strokeWeight(5);
   fill(255,0,150);
   vertex(windowWidth, 600);
   vertex(windowWidth, 80);
@@ -249,7 +382,6 @@ endShape(CLOSE)
 
 beginShape();
   stroke(0);
-  strokeWeight(5);
   fill(255);
   vertex(windowWidth, 600);
   vertex(windowWidth, 80);
@@ -258,7 +390,6 @@ endShape(CLOSE)
 
 beginShape();
   stroke(0);
-  strokeWeight(5);
   fill(255,0,150);
   vertex(windowWidth, 600);
   vertex(windowWidth, 80);
@@ -267,7 +398,6 @@ endShape(CLOSE)
 
 beginShape();
   stroke(0);
-  strokeWeight(5);
   fill(255);
   vertex(windowWidth, 600);
   vertex(windowWidth, 80);
@@ -276,7 +406,6 @@ endShape(CLOSE)
 
 beginShape();
   stroke(0);
-  strokeWeight(5);
   fill(255,0,150);
   vertex(windowWidth, 600);
   vertex(windowWidth, 80);
@@ -285,7 +414,6 @@ endShape(CLOSE)
 
 beginShape();
   stroke(0);
-  strokeWeight(5);
   fill(255);
   vertex(windowWidth, 600);
   vertex(windowWidth, 80);
@@ -294,7 +422,6 @@ endShape(CLOSE)
 
 beginShape();
   stroke(0);
-  strokeWeight(5);
   fill(255,0,150);
   vertex(windowWidth, 600);
   vertex(windowWidth, 80);
@@ -303,7 +430,6 @@ endShape(CLOSE)
 
 beginShape();
   stroke(0);
-  strokeWeight(5);
   fill(255);
   vertex(windowWidth, 600);
   vertex(windowWidth, 80);
@@ -312,7 +438,6 @@ endShape(CLOSE)
 
 beginShape();
   stroke(0);
-  strokeWeight(5);
   fill(255,0,150);
   vertex(windowWidth, 600);
   vertex(windowWidth, 80);
@@ -321,7 +446,6 @@ endShape(CLOSE)
 
 beginShape();
   stroke(0);
-  strokeWeight(5);
   fill(255);
   vertex(windowWidth, 600);
   vertex(windowWidth, 80);
@@ -330,7 +454,6 @@ endShape(CLOSE)
 
 beginShape();
   stroke(0);
-  strokeWeight(5);
   fill(255,0,150);
   vertex(windowWidth, 600);
   vertex(windowWidth, 80);
@@ -339,7 +462,6 @@ endShape(CLOSE)
 
 beginShape();
   stroke(0);
-  strokeWeight(5);
   fill(255);
   vertex(windowWidth, 600);
   vertex(windowWidth, 80);
@@ -357,23 +479,88 @@ endShape(CLOSE)
 
 pop();
 
+//side squares - left
+
+
+  // var x = mouseX;
+  // var y = mouseY;
+  // var ix = width - mouseX;  // Inverse X
+  // var iy = height - mouseY; // Inverse Y
+
+push();
+	stroke(255);
+	strokeWeight(0);
+	fill(255,0,150);
+for(var i = 0; i < 1500; i++) {
+  rect(0, i * mouseY, 50, 50);
+}
+pop();
+
+push();
+	stroke(255);
+	strokeWeight(0);
+	fill(255);
+for(var i = 0; i < 1500; i++) {
+  rect(0, i * iy, 50, 50);
+}
+pop();
+
+//side squares - right
+push();
+	stroke(255);
+	strokeWeight(0);
+	fill(255);
+for(var i = 0; i < 1500; i++) {
+  rect(windowWidth-50, i * mouseY, 50, 50);
+}
+pop();
+
+push();
+	stroke(255,0,150);
+	strokeWeight(0);
+	fill(255);
+for(var i = 0; i < 1500; i++) {
+  rect(windowWidth-50, i * iy, 50, 50);
+}
+pop();
+
+// push();
+// 	stroke(255);
+// 	strokeWeight(0);
+// 	fill(255);
+// for(var i = 0; i < 1500; i++) {
+//   rect(i * ix, 10, 50, 50);
+// }
+// pop();
+
+// push();
+// 	stroke(255);
+// 	strokeWeight(0);
+// 	fill(255);
+// for(var i = 0; i < 1500; i++) {
+//   rect(i * ix, windowHeight-55, 50, 50);
+// }
+// pop();
+
 
 //rainbowheels
 push();
     stroke(0);
     strokeWeight(8);
 	fill(color(random(255), random(255), random(255)));
-	ellipse(windowWidth*.42, windowHeight*.55, windowWidth*.07, windowHeight*.10)
-	ellipse(windowWidth*.27, windowHeight*.37, windowWidth*.07, windowHeight*.10)
+	ellipse(windowWidth*.42+ random(2), windowHeight*.55, windowWidth*.07, windowHeight*.10)
+	ellipse(windowWidth*.27+ random(2), windowHeight*.37, windowWidth*.07, windowHeight*.10)
 pop();
 
 //vehicle shape
+
+
 push();
 beginShape();
   stroke(0);
   strokeWeight(5);
   fill(255,0,150);
-  vertex(windowWidth*.46, windowHeight*.37);
+  vertex(windowWidth*.46+ random(2), windowHeight*.37+ random(2));
   vertex(windowWidth*.20, windowHeight*.26);
   vertex(windowWidth*.48, windowHeight*.58);
 endShape(CLOSE)
@@ -384,28 +571,9 @@ push();
   strokeWeight(5);
   fill(255);
   // rotate(radians(10));
-  rect (windowWidth*.42, windowHeight*.40, windowWidth*.04, windowHeight*.02);
+  rect (windowWidth*.42+ random(1), windowHeight*.41+ random(1), windowWidth*.0375, windowHeight*.02);
 pop();
 
-
-
-//weird shaky circle mouse
-push();
-translate(mouseX, mouseY);
-stroke(0);
-  strokeWeight(5);
-  fill(255,0,150,0);
-beginShape();
-for(var i = 0; i < 100; i++) {
-
-
-  var radius = 75 + random(5);
-  var x = cos(radians(i * 3.6)) * radius;
-  var y = sin(radians(i * 3.6)) * radius;
-  vertex(x, y);
-}
-endShape(CLOSE);
-pop();
 
 
 // translate(width/2, height/2);
