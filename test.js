@@ -3,15 +3,15 @@
 // var showing = true;
 // var waitress;
 // var img;
-// var song;
+var song;
 
-// function preload(){
-// 	song = loadSound('k.mp3');
-// }
+function preload(){
+	song = loadSound('assets/k.mp3');
+}
  
 function setup() {
   createCanvas(windowWidth,windowHeight);
-  // song.loop(); 
+ song.loop(); 
   // img = loadImage("shark.jpg"); 
 //   viewfs = document.getElementById("enter");
 //   exitfs = document.getElementById("exit");
@@ -26,14 +26,14 @@ function setup() {
 //   frameRate(60);
 // }
 
-// function mousePressed() {
-//   if ( song.isPlaying() ) { // .isPlaying() returns a boolean
-//     song.pause(); // .play() will resume from .pause() position
-//     background(255,0,0);
-//   } else {
-//     song.play();
-//     background(0,255,0);
-//   }
+function mousePressed() {
+  if ( song.isPlaying() ) { // .isPlaying() returns a boolean
+    song.pause(); // .play() will resume from .pause() position
+    //background(255,0,0);
+  } else {
+    song.play();
+    //background(0,255,0);
+  }
 
   function draw() {
   //background(255);
