@@ -34,7 +34,7 @@ function mousePressed() {
     song.play();
     //background(0,255,0);
   }
-
+}
   function draw() {
   //background(255);
 
