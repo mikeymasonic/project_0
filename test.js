@@ -92,6 +92,8 @@ push();
 	ellipse (mouseX, mouseY, 20, 20);
 pop();	
 
+
+
 // push();
 // translate(mouseX, mouseY);
 // stroke(255, 150);
@@ -209,6 +211,8 @@ push();
   var iy = height - mouseY; // Inverse Y
 
 
+
+
 translate(windowWidth*.80, windowHeight*.25);
 beginShape();
 for(var i = 0; i < 100; i++) {
@@ -227,6 +231,16 @@ for(var i = 0; i < 100; i++) {
 }
 endShape(CLOSE);
 pop();
+
+///middle circle thing
+
+// pop();
+// 	strokeWeight(0);
+//   fill(255, 150);
+//   ellipse(x, height/2, y, y);
+//   fill(0, 159);
+//   ellipse(ix, height/2, iy, iy);
+// push();
 
 
 // push();

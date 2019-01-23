@@ -19,3 +19,27 @@ git add .
 git commit -am'some comment'
 
 git push origin master
+
+git push origin gh-pages
+
+git pull origin gh-pages
+
+-----------
+Order to push new code:
+
+git Status //to see if there are changes
+git commit -am'What'djado' //to upload / log changes
+git push origin gh-pages //to push to the a website
+
+git add . // to add new files
+
+
+-------
+
+** before making local changes ALWAYS do:**
+git pull origin gh-pages
+
+git checkout <branchname> //sets your branch to be something new
+
+gitclone <urlfromgithub> //copies things from internet/github.com
+

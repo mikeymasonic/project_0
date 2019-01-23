@@ -1,0 +1,21 @@
+Notes:
+
+
+
+Datatypes:
+	number
+	boolean
+	string
+	function
+	object
+	null
+	undefined
+
+Concatenate
+
+"" make a string
+
+
+var myObj = {color:"red", size:10};
+
+var myArr=[16, 50, 37]
